@@ -10,6 +10,27 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'io.spring.dependency-management'
+// Add
+apply plugin: 'groovy'
+// Add
+sourceSets {
+    main {
+        java {
+            srcDirs = []
+        }
+        groovy {
+            srcDirs = ['src/main/java']
+        }
+    }
+    test {
+        java {
+            srcDirs = []
+        }
+        groovy {
+            srcDirs = ['src/test/java']
+        }
+    }
+}
 
 sourceCompatibility = 1.5
 version = '1.0'
@@ -31,6 +52,8 @@ dependencyManagement {
 }
 
 dependencies {
+    // Add
+    compile 'org.codehaus.groovy:groovy-all:2.4.3'
     compile 'org.springframework.boot:spring-boot-starter-web'
 
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
