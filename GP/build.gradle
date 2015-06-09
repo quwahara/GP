@@ -10,9 +10,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'io.spring.dependency-management'
-// Add
 apply plugin: 'groovy'
-// Add
 sourceSets {
     main {
         java {
@@ -52,7 +50,6 @@ dependencyManagement {
 }
 
 dependencies {
-    // Add
     compile 'org.codehaus.groovy:groovy-all:2.4.3'
     compile 'org.springframework.boot:spring-boot-starter-web'
 
