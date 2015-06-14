@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>memo one</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <div th:if="${memo}" th:object="${memo}">
+    <div th:text="*{text}"></div>
+    <div th:text="*{creationDate}"></div>
+  </div>
+  <div th:unless="${memo}">
+    <div>No memo</div>
+  </div>
+</body>
+</html>

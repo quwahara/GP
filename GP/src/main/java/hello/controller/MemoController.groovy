@@ -5,8 +5,12 @@ import hello.service.MemoRepository
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
+// Add
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
+// Add
+import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
 
@@ -35,5 +39,12 @@ class MemoController {
     List<Memo> find(@PathVariable Long id) {
         Memo memo = memoRepository.findOne(id)
         return (memo?[memo]:[]) as Memo[]
+    }
+
+    // Add
+    @RequestMapping(value="/memo/one", method=RequestMethod.GET)
+    String one(Model model) {
+        model.addAttribute("memo", memoRepository.findOne(1L))
+        return "memo_one";
     }
 }
