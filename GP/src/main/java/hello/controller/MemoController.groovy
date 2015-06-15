@@ -45,6 +45,6 @@ class MemoController {
     @RequestMapping(value="/memo/one", method=RequestMethod.GET)
     String one(Model model) {
         model.addAttribute("memo", memoRepository.findOne(1L))
-        return "memo_one";
+        return "memo_one"
     }
 }
